@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+    <div id="conteudo">
+        <select id="estado" nome="estado"> </select>
+    </div>
+
+    <script>
+        var estado = document.getElementById("estado");
+
+        var option = document.createElement("option");
+        estado.appendChild(option);
+        option.value = "PE";
+        option.innerHTML= "Pernambuco";
+        //option.text= "Pernambuco";
+
+        var option2 = document.createElement("option");
+        estado.appendChild(option2);
+        option2.value = "MA";
+        option2.innerHTML= "Maranhão";
+        //option.text= "Pernambuco";
+
+        var option3 = document.createElement("option");
+        estado.appendChild(option3);
+        option3.value = "BA";
+        option3.innerHTML= "Bahia";
+        //option.text= "Pernambuco";
+
+        var option4 = document.createElement("option");
+        estado.appendChild(option4);
+        option4.value = "RN";
+        option4.innerHTML= "Rio Grande do Norte";
+        //option.text= "Pernambuco";
+
+        var option5 = document.createElement("option");
+        estado.appendChild(option5);
+        option5.value = "SE";
+        option5.innerHTML= "Sergipe";
+        //option.text= "Pernambuco";
+
+        var option6 = document.createElement("option");
+        estado.appendChild(option6);
+        option6.value = "CE";
+        option6.innerHTML= "Ceará";
+        //option.text= "Pernambuco";
+
+        var option7 = document.createElement("option");
+        estado.appendChild(option7);
+        option7.value = "PA";
+        option7.innerHTML= "Paraíba";
+        //option.text= "Pernambuco";
+
+        var option8 = document.createElement("option");
+        estado.appendChild(option8);
+        option8.value = "AL";
+        option8.innerHTML= "Alagoas";
+        //option.text= "Pernambuco";
+
+        var option9 = document.createElement("option");
+        estado.appendChild(option9);
+        option9.value = "PI";
+        option9.innerHTML= "Ceará";
+        //option.text= "Pernambuco";
+
+        console.log(estado);
+    </script>
+</body>
+
+</html>

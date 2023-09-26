@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="">Curso:</label> <br>
+        <input type="radio" id="tipi" name="curso" value="">Informática para Internet
+        <input type="radio" id="ads" name="curso" value=""> Análise e Desenvolvimento de Sistemas
+        <input type="radio" id="adm" name="curso" value=""> Administração
+        <input type="radio" id="qdd" name="curso" value=""> Qualidade
+    </form>
+
+    <script>
+        var cursos = document.getElementsByName("curso");
+        console.log(cursos);
+    </script>
+</body>
+
+</html>

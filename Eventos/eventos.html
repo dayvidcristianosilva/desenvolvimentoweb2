@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+
+
+
+</head>
+
+<body>
+    <div id="dv" onmouseover="mudarCorDiv();" onmouseout="mudarCorDiv();">
+        <p id="p1" onmouseover="alterarCorTamanho()">Pressione o botão para alterar a cor, e passe o mouse por cima do
+            texto, para que ele aumente."</p>
+    </div>
+    <button onclick="alterarCorFonte();">Alterar</button>
+
+    <script>
+
+        //Alterar cor da fonte
+        function alterarCorFonte() {
+            var p1 = document.getElementById("p1");
+            p1.style.color = "red";
+        }
+
+        function alterarCorTamanho() {
+            var p1 = document.getElementById("p1");
+            if (p1.style.color == "red") {
+                p1.style.color = "green";
+                p1.style.fontSize = "26px";
+            } else {
+                p1.style.color = "black";
+                p1.style.fontSize = "18px";
+            }
+        }
+
+
+        //Função para alterar o texto, ao clicar no botão
+        function alteraPara() {
+            var p1 = document.getElementById("p1");
+            if (p1.innerHTML == "Olá") {
+                p1.innerHTML = "Pressione o botão para imprimir Olá!"
+            } else {
+                p1.innerHTML = "Olá"
+            }
+        }
+        //Função para alterar a cor da div
+        function mudarCorDiv() {
+            var dv = document.getElementById("dv");
+            if (dv.style.backgroundColor == "gray") {
+                dv.style.backgroundColor = "";
+            } else {
+                dv.style.backgroundColor = "gray"
+            }
+        };
+
+    </script>
+</body>
+
+</html>

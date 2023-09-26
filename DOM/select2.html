@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>ha
+    <select name="estado" id="estado">
+        <option value="">Selecione um Estado</option>
+        <option value="pe">PE</option>
+        <option value="pb">PB</option>
+        <option value="rn">RN</option>
+    </select>
+
+    <select name="cidade" id="cidade"></select>
+
+    <script>
+        var estado = document.getElementById('estado');
+        estado.addEventListener('change', function () {
+
+            var sigla = estado.value;
+
+            switch (sigla) {
+                case "pb":
+                    var cidade = document.getElementById('cidade');
+
+                    for (var i = cidade.children.length - 1; i >= 0; i--) {
+                        cidade.removeChild(cidade.children[i]);
+                    }
+
+                    var op0 = document.createElement('option');
+                    op0.innerHTML = 'Selecione uma cidade'
+                    cidade.appendChild(op0);
+
+                    var op1 = document.createElement('option');
+                    op1.innerHTML = 'João Pessoa';
+                    op1.value = 'jp';
+                    cidade.appendChild(op1);
+                    var op2 = document.createElement('option');
+                    op2.innerHTML = 'Rio Tinto'
+                    op2.value = 'rt'
+                    cidade.appendChild(op2);
+
+                    break;
+
+                case "pe":
+                    var cidade = document.getElementById('cidade');
+
+
+                    for (var i = cidade.children.length - 1; i >= 0; i--) {
+                        cidade.removeChild(cidade.children[i]);
+                    }
+
+                    var op0 = document.createElement('option');
+                    op0.innerHTML = 'Selecione uma cidade'
+                    cidade.appendChild(op0);
+                    var op1 = document.createElement('option');
+                    op1.innerHTML = 'Recife';
+                    op1.value = 'rc';
+                    cidade.appendChild(op1);
+                    var op2 = document.createElement('option');
+                    op2.innerHTML = 'Jaboatão dos Guararapes'
+                    op2.value = 'jb'
+                    cidade.appendChild(op2);
+
+                    break;
+
+
+                case "rn":
+                    var cidade = document.getElementById('cidade');
+
+                    for (var i = cidade.children.length - 1; i >= 0; i--) {
+                        cidade.removeChild(cidade.children[i]);
+                    }
+
+                    var op0 = document.createElement('option');
+                    op0.innerHTML = 'Selecione uma cidade'
+                    cidade.appendChild(op0);
+                    var op1 = document.createElement('option');
+                    op1.innerHTML = 'Natal';
+                    op1.value = 'nt';
+                    cidade.appendChild(op1);
+                    var op2 = document.createElement('option');
+                    op2.innerHTML = 'Equador'
+                    op2.value = 'eq'
+                    cidade.appendChild(op2);
+
+                    break;
+
+            }
+        });
+    </script>
+</body>
+
+</html>
