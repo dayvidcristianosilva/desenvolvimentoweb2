@@ -1,0 +1,11 @@
+Links usados nas aulas:
+
+NPM Node:
+
+https://www.npmjs.com/package/node
+
+Links gerador de textos:
+
+https://potteripsum.netlify.app/
+https://mussumipsum.com/
+
