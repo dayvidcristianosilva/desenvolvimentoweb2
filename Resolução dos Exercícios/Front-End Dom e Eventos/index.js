@@ -1,9 +1,8 @@
-// Define variables at the beginning to avoid redeclaration.
 var CasaHogwarts = document.getElementById('CasaHogwarts');
 var CaracterCasa = document.getElementById('CaracterCasa');
 var PersonaCasa = document.getElementById('PersonaCasa');
 var btnEnviar = document.getElementById('btnEnviar');
-var RecebeInf = document.getElementById('RecebeInf');
+var divRecebeInf = document.getElementById('divRecebeInf');
 
 CasaHogwarts.addEventListener('change', function () {
     var casa = CasaHogwarts.value;
@@ -79,7 +78,7 @@ btnEnviar.addEventListener('click', function () {
 
     var novoItem = document.createElement('div');
     novoItem.innerHTML = `
-        <strong>${HouseHogwarts} - ${CaracterHouse}:</strong> ${persona}
+        <strong>${HouseHogwarts} - ${CaracterHouse} - ${persona}</strong> 
         <button class="btn-editar">Editar</button>
         <button class="btn-deletar">Excluir</button>
     `;
@@ -93,7 +92,8 @@ btnEnviar.addEventListener('click', function () {
     novoItem.querySelector('.btn-deletar').addEventListener('click', function () {
         novoItem.remove();
     });
-    RecebeInf.appendChild(novoItem);
+
+    divRecebeInf.appendChild(novoItem);
 
     PersonaCasa.value = '';
 
