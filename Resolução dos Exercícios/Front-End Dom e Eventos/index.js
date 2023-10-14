@@ -66,6 +66,18 @@ CasaHogwarts.addEventListener('change', function () {
     }
 });
 
+var CasaHogwarts = document.getElementById('CasaHogwarts');
+var CaracterCasa = document.getElementById('CaracterCasa');
+var PersonaCasa = document.getElementById('PersonaCasa');
+var btnEnviar = document.getElementById('btnEnviar');
+var divRecebeInf = document.getElementById('divRecebeInf');
+
+var isEditing = false;
+var editarItem = null;
+
+CasaHogwarts.addEventListener('change', function () {
+});
+
 btnEnviar.addEventListener('click', function () {
     var HouseHogwarts = CasaHogwarts.options[CasaHogwarts.selectedIndex].text;
     var CaracterHouse = CaracterCasa.options[CaracterCasa.selectedIndex].text;
@@ -76,25 +88,40 @@ btnEnviar.addEventListener('click', function () {
         return;
     }
 
-    var novoItem = document.createElement('div');
-    novoItem.innerHTML = `
-        <strong>${HouseHogwarts} - ${CaracterHouse} - ${persona}</strong> 
-        <button class="btn-editar">Editar</button>
-        <button class="btn-deletar">Excluir</button>
-    `;
+    if (isEditing) {
 
-    novoItem.querySelector('.btn-editar').addEventListener('click', function () {
-        CasaHogwarts.value = HouseHogwarts;
-        CaracterCasa.value = CaracterHouse;
-        PersonaCasa.value = persona;
-    });
+        editarItem.innerHTML = `
+            <strong>${HouseHogwarts} - ${CaracterHouse} - ${persona}</strong> 
+            <button class="btn-editar">Editar</button>
+            <button class="btn-deletar">Excluir</button>
+        `;
 
-    novoItem.querySelector('.btn-deletar').addEventListener('click', function () {
-        novoItem.remove();
-    });
+        isEditing = false;
+        editarItem = null;
+    } else {
 
-    divRecebeInf.appendChild(novoItem);
+        var novoItem = document.createElement('div');
+        novoItem.innerHTML = `
+            <strong>${HouseHogwarts} - ${CaracterHouse} - ${persona}</strong> 
+            <button class="btn-editar">Editar</button>
+            <button class="btn-deletar">Excluir</button>
+        `;
+
+        novoItem.querySelector('.btn-editar').addEventListener('click', function () {
+            isEditing = true;
+            editarItem = novoItem;
+
+            CasaHogwarts.value = HouseHogwarts;
+            CaracterCasa.value = CaracterHouse;
+            PersonaCasa.value = persona;
+        });
+
+        novoItem.querySelector('.btn-deletar').addEventListener('click', function () {
+            novoItem.remove();
+        });
+
+        divRecebeInf.appendChild(novoItem);
+    }
 
     PersonaCasa.value = '';
-
 });
