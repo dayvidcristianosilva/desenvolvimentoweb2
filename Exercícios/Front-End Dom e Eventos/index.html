@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bem-vindx a Hogwarts!</title>
+</head>
+
+<body>
+    <h3>"Espero que estejam satisfeitos com o que fizeram. </br>
+        Podíamos ter sido mortos, ou pior, expulsos."</h3>
+
+    <form id="FormsHogwarts">
+        <label for="CasaHogwarts">Selecione uma casa:</label><br>
+        <select id="CasaHogwarts">
+            <option value="">Selecione uma casa</option>
+            <option value="gry">Grifinória</option>
+            <option value="sly">Sonserina</option>
+            <option value="rav">Corvinal</option>
+            <option value="huf">Lufa-lufa</option>
+        </select>
+
+        <br><br>
+
+        <label for="CaracterCasa">Selecione uma característica da casa escolhida:</label><br>
+        <select id="CaracterCasa" name="CaracterCasa">
+        </select>
+
+        <br><br>
+
+        <label for="PersonaCasa">Sabe de algum personagem que pereteça a essa casa?</label><br>
+        <input type="text" id="PersonaCasa">
+
+        <button type="button" id="btnEnviar">Enviar</button>
+    </form>
+
+    <br><br>
+
+    <div id="RecebeInf"></div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
