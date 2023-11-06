@@ -14,8 +14,8 @@ produtos = [
 
 app.get('/produtos', (req, res) => {
 
-    var nomeFiltro = req.query.nome;
-    var precoMaximo = req.query.preco;
+    var nomeFiltro = req.query.nomeFiltro;
+    var precoMaximo = req.query.precoMaximo;
 
     var resultadodaBusca = [];
     produtos.forEach(produto => {
