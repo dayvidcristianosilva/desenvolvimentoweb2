@@ -48,6 +48,7 @@ CasaHogwarts.addEventListener('change', function () {
 
             var op2 = document.createElement('option');
             op2.innerHTML = 'Sábio'
+            
             op2.value = 'sab'
             CaracterCasa.appendChild(op2);
             break;
@@ -120,8 +121,8 @@ btnEnviar.addEventListener('click', function () {
             novoItem.remove();
         });
 
-        divRecebeInf.appendChild(novoItem);
+        divRecebeInf.appendChild();
     }
 
-    PersonaCasa.value = '';
+    PersonaCasa.value = '';novoItem
 });
